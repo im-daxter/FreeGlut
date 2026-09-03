@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1788460047 source:/home/kravchenko/Projects/freeglut/nome/main.c
+	<GL/glut.h>
+
