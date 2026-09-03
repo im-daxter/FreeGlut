@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1788463322 source:/home/kravchenko/Projects/FreeGlut/ps1-logo/ps1-logo/main.cpp
+	<GL/freeglut.h>
+
