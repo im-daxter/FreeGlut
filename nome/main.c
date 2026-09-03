@@ -3,8 +3,8 @@
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
 
-    //         le   ri  bo   up
-    gluOrtho2D(-5, 5, -5, 5);
+    //         le   ri   bo    up
+    gluOrtho2D(-0.5, 3.0, -0.5, 2.0);
 
     // Letra 'J'
     glBegin(GL_LINE_STRIP);
