@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1791576549 source:/home/kravchenko/Projects/FreeGlut/animacao/main.cpp
-	<windows.h>
-	<GL/freeglut.h>
-	<stdio.h>
-
