@@ -13,6 +13,7 @@ GLfloat yp1 = 200.0f;
 GLsizei rsize = 50;
 
 float deslocaX = 0.0f;
+int contador = 0, errou = 0;
 
 // Vetor de translacao
 GLfloat xstep = 3.0f;
@@ -20,7 +21,14 @@ GLfloat ystep = 3.0f;
 GLfloat windowWidth;
 GLfloat windowHeight;
 
-void desenhaCirculo()
+void desenhaTexto(char *aux)
+{
+    while ( *aux ) {
+        glutStrokeCharacter(GLUT_STROKE_ROMAN, *aux++);
+    }
+}
+
+void desenhaCirculo(void)
 {
     glColor3f(1, 0, 0);
     glLineWidth(5);
@@ -28,12 +36,12 @@ void desenhaCirculo()
     float ang, x, y;
 
     glBegin(GL_LINE_LOOP);
-        for (i = 0; i < 360; i++) {
+        for ( i = 0; i < 360; i++ ) {
             //angle = 2*PI*i/circle_points;
-            ang = (i * PI) / 180.0;
-            x = xp1 + (cos(ang) * 25);
-            y = yp1 + (sin(ang) * 25);
-            glVertex2f(x, y);
+            ang = ( i * PI ) / 180.0;
+            x = xp1 + (cos(ang) * 15);
+            y = yp1 + (sin(ang) * 15);
+            glVertex2f( x, y );
         }
 
     glEnd();
@@ -74,30 +82,31 @@ void Desenha(void)
 
 void Timer(int value)
 {
-    //if(xp1 > windowWidth-rsize || xp1 < 0)
-    //    xstep = -xstep;
-    //if(yp1 > windowHeight-rsize || yp1 < 0)
-    //    ystep = yp1;
-
     if( xp1 > windowWidth-rsize )
         xp1 = windowWidth-rsize-1;
 
-    //if ( yp1 > windowHeight-rsize ) {
-    //    yp1 = 200;
-    //}
-
-    if ( yp1 > 500 ) {
+    if ( yp1 > 450 ) {
         yp1 = 200;
         ystep = 4.0f;
         continua = 0;
     }
 
-    //xp1 += xstep;
     yp1 += ystep;
 
+    if ( yp1 == 450 && xp1 > 150 && xp1 < 450 ) {
+        //contador++;
+        printf("GOL");
+
+        glPushMatrix(); //
+            glColor3f(1.0f, 1.0f, 1.0f);
+            //glTranslatef(100.0f, 200.0f, 0.0f);
+            glScalef(2.0f, 2.0f, 0.0f);
+            desenhaTexto("GOL");
+        glPopMatrix();
+    }
 
     if ( continua == 1 ) {
-    glutTimerFunc(5, Timer, 0);
+        glutTimerFunc(5, Timer, 0);
     }
 
     glutPostRedisplay();
@@ -150,7 +159,6 @@ int main(int argc, char** argv)
 
     glutDisplayFunc(Desenha);
     glutReshapeFunc(AlteraTamanhoJanela);
-    //glutTimerFunc(5, Timer, 0);
     glutKeyboardFunc(teclado);
 
     glutMainLoop();

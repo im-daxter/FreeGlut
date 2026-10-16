@@ -23,7 +23,7 @@
 1792187249 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
 
-1792188248 source:c:\users\1641037\documents\freeglut\gol\main.cpp
+1792190903 source:c:\users\1641037\documents\freeglut\gol\main.cpp
 	<windows.h>
 	<GL/freeglut.h>
 	<stdio.h>
