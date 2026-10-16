@@ -39,6 +39,26 @@ void desenhaCirculo()
     glEnd();
 }
 
+void desenhaGol(void)
+{
+    glColor3f(1, 1, 1);
+    glLineWidth(5);
+
+    float traveE = 150, traveD = 450;
+    float chao = 310, travessao = 450;
+
+    glBegin(GL_LINES);
+        glVertex2f( traveE, chao );
+        glVertex2f( traveE , travessao );
+
+        glVertex2f( traveD, chao );
+        glVertex2f( traveD , travessao );
+
+        glVertex2f( traveE, travessao );
+        glVertex2f( traveD, travessao );
+    glEnd();
+}
+
 void Desenha(void)
 {
     glMatrixMode(GL_MODELVIEW);
@@ -48,6 +68,7 @@ void Desenha(void)
     glColor3f(1.0f, 0.0f, 0.0f);
 
     desenhaCirculo();
+    desenhaGol();
     glutSwapBuffers();
 }
 
@@ -65,9 +86,9 @@ void Timer(int value)
     //    yp1 = 200;
     //}
 
-    if ( yp1 > 700 ) {
+    if ( yp1 > 500 ) {
         yp1 = 200;
-        ystep = 3.0f;
+        ystep = 4.0f;
         continua = 0;
     }
 

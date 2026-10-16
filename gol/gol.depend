@@ -5,11 +5,11 @@
 	<stdio.h>
 	<math.h>
 
-1791582967 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut.h
+1792187249 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut.h
 	"freeglut_std.h"
 	"freeglut_ext.h"
 
-1791582967 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut_std.h
+1792187249 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut_std.h
 	<windows.h>
 	<EGL/egl.h>
 	<GLES/gl.h>
@@ -20,6 +20,12 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1791582967 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut_ext.h
+1792187249 c:\users\1641037\documents\freeglut\freeglut\include\gl\freeglut_ext.h
 	<stdarg.h>
+
+1792188248 source:c:\users\1641037\documents\freeglut\gol\main.cpp
+	<windows.h>
+	<GL/freeglut.h>
+	<stdio.h>
+	<math.h>
 
